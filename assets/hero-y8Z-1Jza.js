@@ -1,0 +1,1 @@
+import{j as s,m as i,z as e}from"./vendor-BKTHnILp.js";const t=()=>s.jsx("div",{className:"absolute inset-0 z-0",children:s.jsx(i.div,{initial:{opacity:0},animate:{opacity:1},transition:{duration:1,delay:.5},className:"w-full h-full",children:s.jsx(e,{scene:"https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"})})});export{t as default};
