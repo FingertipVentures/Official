@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: black;
+  -webkit-tap-highlight-color: transparent; /* Prevent tap highlight on mobile */
+  height: 100%;
+  position: relative;
+}
+
+/* Hide default cursor on desktop only */
+@media (min-width: 769px) {
+  body {
+    cursor: none;
+  }
+  
+  * {
+    cursor: none !important;
+  }
+
+  /* Ensure clickable elements show pointer cursor for accessibility */
+  a, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"] {
+    cursor: pointer !important;
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  /* Hide scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Improve touch interactions */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Better touch scrolling */
+  .touch-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar for desktop */
+@media (min-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+  }
+}
+
+/* Dark mode variables */
+:root {
+  --scrollbar-track: #000000;
+  --scrollbar-thumb: #ffffff;
+  --scrollbar-thumb-hover: #555;
+}
+
+/* Light mode variables */
+:root .light-mode {
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #555;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Better touch feedback */
+@media (hover: none) {
+  .hover\:scale-95:hover {
+    transform: none !important;
+  }
+  
+  .hover\:opacity-90:hover {
+    opacity: 1 !important;
+  }
+}
