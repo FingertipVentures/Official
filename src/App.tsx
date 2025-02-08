@@ -72,7 +72,7 @@ function App() {
     if (element) {
       // Close mobile menu first
       setIsMobileMenuOpen(false);
-      
+
       // Add a small delay to ensure the menu is closed before scrolling
       setTimeout(() => {
         const navHeight = 80; // Approximate height of the navigation bar
@@ -178,28 +178,25 @@ function App() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
-                    className={`md:hidden mt-4 ${
-                      isDarkMode 
-                        ? 'bg-gray-800 text-white' 
-                        : 'bg-white text-gray-900'
-                    } shadow-lg rounded-lg overflow-hidden`}
+                    className={`md:hidden mt-4 ${isDarkMode
+                      ? 'bg-gray-800 text-white'
+                      : 'bg-white text-gray-900'
+                      } shadow-lg rounded-lg overflow-hidden`}
                   >
                     <div className="flex flex-col">
                       {navigationLinks.map((section) => (
                         <button
                           key={section}
                           onClick={() => scrollToSection(section)}
-                          className={`w-full text-left px-6 py-4 text-sm font-medium ${
-                            isDarkMode 
-                              ? 'hover:bg-gray-700' 
-                              : 'hover:bg-gray-100'
-                          } transition-colors ${
-                            activeSection === section 
-                              ? 'text-purple-500' 
-                              : isDarkMode 
-                                ? 'text-gray-100' 
+                          className={`w-full text-left px-6 py-4 text-sm font-medium ${isDarkMode
+                            ? 'hover:bg-gray-700'
+                            : 'hover:bg-gray-100'
+                            } transition-colors ${activeSection === section
+                              ? 'text-purple-500'
+                              : isDarkMode
+                                ? 'text-gray-100'
                                 : 'text-gray-900'
-                          }`}
+                            }`}
                         >
                           {section.charAt(0).toUpperCase() + section.slice(1)}
                         </button>
@@ -353,7 +350,7 @@ function App() {
                           isDarkMode ? 'text-gray-400' : 'text-gray-600'
                         }
                       >
-                        +91 (555) 123-4567
+                        +91 8329713051
                       </p>
                     </div>
                   </div>
